@@ -1,28 +1,16 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
-import MainLayout from "./components/MainLayout";
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Courses from "./pages/Courses";
-import Contact from "./pages/Contact";
-import CourseDetail from "./pages/CourseDetail";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<Home />} />
-          <Route path="nosotros" element={<About />} />
-          <Route path="servicios" element={<Services />} />
-          <Route path="cursos" element={<Courses />} />
-          <Route path="contacto" element={<Contact />} />
-          <Route path="curso/:cursoId" element={<CourseDetail />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <main className="flex-grow">
+        <Home />
+      </main>
+      <Footer />
+    </div>
   );
 }
 

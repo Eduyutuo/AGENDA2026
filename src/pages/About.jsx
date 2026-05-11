@@ -176,7 +176,7 @@ export default function About() {
       </section>
 
       {/* 4. Respaldo Académico */}
-      <section className="py-20 md:py-32 bg-[#F5F7F8]">
+      <section id="roberto" className="py-20 md:py-32 bg-[#F5F7F8]">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -231,32 +231,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* 5. CTA Final */}
-      <section className="bg-[#006B68] py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-3xl md:text-5xl font-title font-bold text-white mb-6">
-              Asegura tu cupo en la primera cohorte
-            </h2>
-            <p className="text-white text-lg md:text-xl font-body mb-10">
-              Los 10 primeros inscritos desde los Lives de TikTok acceden al 50% de descuento. Cupos limitados por curso.
-            </p>
-            <a 
-              href="https://wa.me/51928510125?text=Hola%20vengo%20de%20la%20web%20de%20AGENDA%202050%20PER%C3%9A%20y%20quiero%20informaci%C3%B3n%20de%20los%20cursos" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block bg-white text-[#008C89] font-title font-bold text-lg md:text-xl px-10 py-5 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              Solicitar información por WhatsApp
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      {/* CTA Final has been moved to a standalone component */}
     </div>
   );
 }

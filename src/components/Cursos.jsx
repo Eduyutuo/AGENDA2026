@@ -1,6 +1,5 @@
 import { Calendar, Code, Terminal, Database } from "lucide-react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { courses } from "../data/courses";
 
 export default function Cursos() {
@@ -95,12 +94,12 @@ export default function Cursos() {
                   </div>
 
                   {/* CTA Button */}
-                  <Link 
-                    to={`/curso/${curso.id}`}
+                  <a 
+                    href="#contacto"
                     className="w-full inline-block text-center bg-primary hover:bg-secondary text-white font-title text-sm font-bold tracking-wide py-3.5 rounded-md transition-all duration-300 hover:-translate-y-1"
                   >
-                    Ver Detalle del Curso
-                  </Link>
+                    Solicitar Syllabus
+                  </a>
                 </div>
               </motion.div>
             );
