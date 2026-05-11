@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
@@ -18,7 +19,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center cursor-pointer">
+          <Link to="/" className="flex-shrink-0 flex items-center cursor-pointer">
             <div className="flex flex-col items-center">
               <span className="font-title font-extrabold text-2xl tracking-tighter text-dark leading-none">
                 AGENDA
@@ -27,14 +28,14 @@ export default function Header() {
                 2 0 5 0
               </span>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
-                href={`#${link.name.toLowerCase()}`}
+                href={`/#${link.name.replace(/\s+/g, '-').toLowerCase()}`}
                 className={`font-title text-sm font-semibold hover:text-primary transition-colors ${
                   link.active
                     ? "text-dark border-b-2 border-primary pb-1"
@@ -76,7 +77,7 @@ export default function Header() {
             {navLinks.map((link) => (
               <a
                 key={link.name}
-                href={`#${link.name.toLowerCase()}`}
+                href={`/#${link.name.replace(/\s+/g, '-').toLowerCase()}`}
                 className={`block px-3 py-3 rounded-md font-title text-base font-semibold ${
                   link.active
                     ? "bg-primary/10 text-primary"

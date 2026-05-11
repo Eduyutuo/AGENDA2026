@@ -1,22 +1,18 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Beneficios from "./components/Beneficios";
-import Cursos from "./components/Cursos";
-import BonoEmpleabilidad from "./components/BonoEmpleabilidad";
-import CertificadoRespaldo from "./components/CertificadoRespaldo";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import CourseDetail from "./pages/CourseDetail";
 
 function App() {
   return (
-    <div className="font-body text-dark">
-      <Header />
-      <Hero />
-      <Beneficios />
-      <Cursos />
-      <BonoEmpleabilidad />
-      <CertificadoRespaldo />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="curso/:cursoId" element={<CourseDetail />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
