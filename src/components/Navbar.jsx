@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const navLinks = [
-    { name: "Inicio", active: true },
-    { name: "Cursos", active: false },
-    { name: "Bono Empleabilidad", active: false },
-    { name: "Sobre mí", active: false },
-    { name: "Contacto", active: false },
+    { name: "Inicio", path: "/" },
+    { name: "Nosotros", path: "/nosotros" },
+    { name: "Servicios", path: "/servicios" },
+    { name: "Cursos", path: "/cursos" },
+    { name: "Contacto", path: "/contacto" },
   ];
 
   return (
@@ -33,17 +34,17 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={`/#${link.name.replace(/\s+/g, '-').toLowerCase()}`}
+                to={link.path}
                 className={`font-title text-sm font-semibold hover:text-primary transition-colors ${
-                  link.active
+                  location.pathname === link.path
                     ? "text-dark border-b-2 border-primary pb-1"
                     : "text-dark/80"
                 }`}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -75,17 +76,18 @@ export default function Navbar() {
         <div className="md:hidden bg-white border-t border-gray-100 absolute w-full">
           <div className="px-4 pt-2 pb-6 space-y-2 shadow-lg">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={`/#${link.name.replace(/\s+/g, '-').toLowerCase()}`}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
                 className={`block px-3 py-3 rounded-md font-title text-base font-semibold ${
-                  link.active
+                  location.pathname === link.path
                     ? "bg-primary/10 text-primary"
                     : "text-dark hover:bg-gray-50 hover:text-primary"
                 }`}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
             <div className="pt-4 px-3">
               <a

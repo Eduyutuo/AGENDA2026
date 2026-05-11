@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-export default function Layout() {
+export default function MainLayout() {
   return (
     <div className="font-body text-dark flex flex-col min-h-screen">
       <Navbar />
