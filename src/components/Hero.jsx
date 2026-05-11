@@ -1,5 +1,5 @@
-import { MessageCircle, ArrowRight } from "lucide-react";
-
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 export default function Hero() {
   const WHATSAPP_LINK = "https://wa.me/51928510125?text=Hola%20vengo%20de%20la%20web%20de%20AGENDA%202050%20PER%C3%9A%20y%20quiero%20informaci%C3%B3n%20de%20los%20cursos";
 
@@ -23,22 +23,19 @@ export default function Hero() {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-6">
-            <a
-              href="#cursos"
+            <Link
+              to="/cursos"
               className="flex items-center justify-center gap-2 bg-primary hover:bg-secondary text-white font-title text-sm md:text-base font-bold py-4 px-8 rounded-full transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl w-full sm:w-auto"
             >
               Ver cursos de lanzamiento
               <ArrowRight size={18} />
-            </a>
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            </Link>
+            <Link
+              to="/cursos"
               className="flex items-center justify-center gap-2 bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white font-title text-sm md:text-base font-bold py-3.5 px-8 rounded-full transition-all duration-300 hover:-translate-y-1 shadow-sm w-full sm:w-auto"
             >
-              <MessageCircle size={20} />
-              Solicitar información por WhatsApp
-            </a>
+              Explorar programas detallados
+            </Link>
           </div>
 
           {/* Urgency Microcopy */}
