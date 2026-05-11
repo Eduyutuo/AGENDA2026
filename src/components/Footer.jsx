@@ -1,4 +1,5 @@
 import { Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // SVGs para redes sociales
 const TiktokIcon = () => (
@@ -46,10 +47,10 @@ export default function Footer() {
           <div className="flex flex-col">
             <h4 className="font-title text-white font-bold text-lg mb-6">Navegación</h4>
             <ul className="space-y-3 font-body text-base text-gray-400">
-              <li><a href="#inicio" className="hover:text-primary transition-colors">Inicio</a></li>
-              <li><a href="#cursos" className="hover:text-primary transition-colors">Cursos</a></li>
-              <li><a href="#bono" className="hover:text-primary transition-colors">Bono Empleabilidad</a></li>
-              <li><a href="#roberto" className="hover:text-primary transition-colors">Ing. Roberto Tello</a></li>
+              <li><Link to="/" className="hover:text-primary transition-colors">Inicio</Link></li>
+              <li><Link to="/cursos" className="hover:text-primary transition-colors">Cursos</Link></li>
+              <li><Link to="/bono-empleabilidad" className="hover:text-primary transition-colors">Bono Empleabilidad</Link></li>
+              <li><Link to="/sobre-mi" className="hover:text-primary transition-colors">Ing. Roberto Tello</Link></li>
             </ul>
           </div>
 

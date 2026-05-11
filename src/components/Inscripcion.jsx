@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CheckCircle2, MessageCircle, CreditCard, Send, BookOpen } from "lucide-react";
+import { CheckCircle2, CreditCard, Send, BookOpen, MapPin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Inscripcion() {
@@ -17,14 +17,6 @@ export default function Inscripcion() {
     }, 1500);
   };
 
-  const steps = [
-    "Solicita información por WhatsApp.",
-    "Elige el curso de tu interés.",
-    "Realiza el pago por Yape, Plin o link de pago con tarjeta.",
-    "Envía tu comprobante y datos de matrícula.",
-    "Recibe confirmación, acceso a Moodle y enlace de Zoom."
-  ];
-
   return (
     <section id="contacto" className="py-20 md:py-32 bg-white relative overflow-hidden">
       {/* Decorative background elements */}
@@ -33,7 +25,7 @@ export default function Inscripcion() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           
-          {/* Left Column: Pasos */}
+          {/* Left Column: Institutional Info */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -42,33 +34,43 @@ export default function Inscripcion() {
             className="flex flex-col justify-center"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-title font-bold text-dark mb-8 leading-tight">
-              Inscríbete en la primera cohorte de <br/>
+              Ponte en contacto con <br/>
               <span className="text-primary">AGENDA 2050 PERÚ</span>
             </h2>
             
-            <div className="space-y-6 md:space-y-8 mt-4">
-              {steps.map((step, index) => (
-                <div key={index} className="flex items-start gap-4 group">
-                  <div className="w-12 h-12 rounded-full bg-[#008C89]/10 text-primary flex items-center justify-center flex-shrink-0 font-title font-bold text-xl group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                    {index + 1}
-                  </div>
-                  <div className="pt-2">
-                    <p className="font-body text-gray-700 text-lg md:text-xl font-medium leading-relaxed">
-                      {step}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <p className="font-body text-gray-600 text-lg mb-10 leading-relaxed">
+              Estamos aquí para resolver tus dudas y guiarte en tu proceso de matrícula. Déjanos tus datos o visítanos en nuestras oficinas.
+            </p>
 
-            {/* Quick Contact Box */}
-            <div className="mt-12 p-6 bg-gray-50 border border-gray-100 rounded-2xl flex items-center gap-4 shadow-sm">
-              <div className="bg-white p-3 rounded-full shadow-sm">
-                <MessageCircle className="text-secondary" size={28} />
+            <div className="space-y-8">
+              {/* Address */}
+              <div className="flex items-start gap-5 group">
+                <div className="w-14 h-14 rounded-full bg-[#008C89]/10 text-primary flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                  <MapPin size={24} />
+                </div>
+                <div className="pt-1">
+                  <p className="font-title text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">
+                    Dirección
+                  </p>
+                  <p className="font-body text-dark text-xl font-medium leading-relaxed">
+                    Av. Manuel Olguín 211 Of. 601, Surco
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="font-title text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">Dudas rápidas</p>
-                <p className="font-body text-dark font-medium">+51 928 510 125</p>
+
+              {/* Email */}
+              <div className="flex items-start gap-5 group">
+                <div className="w-14 h-14 rounded-full bg-[#008C89]/10 text-primary flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                  <Mail size={24} />
+                </div>
+                <div className="pt-1">
+                  <p className="font-title text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">
+                    Correo electrónico
+                  </p>
+                  <p className="font-body text-dark text-xl font-medium leading-relaxed">
+                    informes@agenda2050.pe
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>

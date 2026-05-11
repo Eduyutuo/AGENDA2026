@@ -1,5 +1,6 @@
 import { MessageCircle, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function CTAFinal() {
   const WHATSAPP_LINK = "https://wa.me/51928510125?text=Hola%20vengo%20de%20la%20web%20de%20AGENDA%202050%20PER%C3%9A%20y%20quiero%20informaci%C3%B3n%20de%20los%20cursos";
@@ -29,13 +30,13 @@ export default function CTAFinal() {
               <MessageCircle size={20} />
               Solicitar información por WhatsApp
             </a>
-            <a 
-              href="#cursos" 
+            <Link 
+              to="/cursos" 
               className="flex items-center justify-center gap-2 bg-white text-primary font-title font-bold text-sm md:text-base px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
             >
               <BookOpen size={20} />
               Ver cursos disponibles
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
